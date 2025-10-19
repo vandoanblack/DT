@@ -111,42 +111,42 @@ img {
     position: fixed;
     top: 20px;
     right: 25px;
-    background: rgba(255, 192, 203, 0.3);
+    background: #ff69b4;
     border: 2px solid white;
     border-radius: 50%;
     padding: 10px 14px;
     font-size: 1.3em;
     color: white;
     cursor: pointer;
-    box-shadow: 0 0 10px #ffb6c1;
+    box-shadow: 0 0 20px #fff;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
 #musicBtn.playing {
-    background: #ff69b4;
-    box-shadow: 0 0 20px #fff;
-    transform: scale(1.1);
+    background: rgba(255, 192, 203, 0.4);
+    box-shadow: 0 0 10px #ffb6c1;
+    transform: scale(1);
 }
 </style>
 </head>
-<img src="SU.jpg" alt="Em iu">
+
 <body>
     <h1>💌 Gửi em iu quái 💕</h1>
-    
+    <img src="SU.jpg" alt="Em iu">
 
     <button id="openButton">💖 Mở thư 💌</button>
     <div id="message"></div>
 
     <!-- Nút bật/tắt nhạc -->
-    <button id="musicBtn">🎵</button>
+    <button id="musicBtn" class="playing">🎵</button>
 
     <!-- Nhạc nền -->
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" autoplay loop>
         <source src="TTMN.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-    // Hiệu ứng tim bay
+    // 💖 Tim bay
     function createHeart() {
         const heart = document.createElement("div");
         heart.classList.add("heart");
@@ -160,7 +160,7 @@ img {
     }
     setInterval(createHeart, 400);
 
-    // Hiệu ứng gõ chữ
+    // 💌 Hiệu ứng gõ chữ
     const text = `Gửi em iu quái 💕  
 Hôm nay là 20/10, một ngày đặc biệt dành cho những người con gái và phụ nữ tuyệt vời.  
 
@@ -206,10 +206,20 @@ Siu nịnh của em`;
         typeLetter();
     });
 
-    // Nút bật/tắt nhạc
+    // 🎵 Nhạc tự phát khi vào trang, và có thể bật/tắt
     const musicBtn = document.getElementById("musicBtn");
     const music = document.getElementById("bgMusic");
 
+    // Tự phát nhạc sau khi người dùng tương tác (tránh bị chặn)
+    window.addEventListener("click", () => {
+        if (music.paused) {
+            music.play();
+        }
+    }, { once: true });
+
+    music.play().catch(() => {}); // cố gắng tự phát
+
+    // Bật/tắt nhạc
     musicBtn.addEventListener("click", () => {
         if (music.paused) {
             music.play();
@@ -222,4 +232,3 @@ Siu nịnh của em`;
     </script>
 </body>
 </html>
-

@@ -4,72 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gửi em iu quái 💕</title>
+    <title>💌 Gửi em iu quái 💕</title>
     <style>
         body {
             background: linear-gradient(135deg, #ffd6e8, #fff0f5);
-            font-family: 'Segoe UI', sans-serif;
+            font-family: "Segoe UI", sans-serif;
             text-align: center;
             overflow: hidden;
-            padding-top: 50px;
+            padding: 30px;
+            color: #444;
         }
         
         h1 {
             color: #e91e63;
-            font-size: 2.5em;
+            font-size: 2.3em;
+            margin-bottom: 20px;
             animation: fadeIn 2s ease forwards;
         }
         
         img {
             width: 220px;
             height: 220px;
-            object-fit: cover;
             border-radius: 50%;
             border: 5px solid #ff80ab;
-            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
-            margin-top: 20px;
+            box-shadow: 0 0 25px rgba(255, 0, 128, 0.6);
+            margin-bottom: 30px;
             opacity: 0;
-            animation: fadeIn 3s ease 2s forwards;
+            animation: fadeIn 3s ease 1s forwards;
         }
         
-        .text-container {
-            position: relative;
-            width: 90%;
-            max-width: 900px;
-            margin: 40px auto;
-            height: 400px;
-            overflow: hidden;
-        }
-        
-        .text-line {
-            position: absolute;
-            left: -100%;
-            width: 100%;
+        #message {
+            display: inline-block;
             font-size: 1.2em;
+            max-width: 90%;
+            line-height: 1.6;
+            text-align: justify;
             color: #333;
-            font-weight: 500;
-            animation: slideRight 4s ease forwards;
-        }
-        
-        @keyframes slideRight {
-            0% {
-                left: -100%;
-                opacity: 0;
-            }
-            50% {
-                left: 10%;
-                opacity: 1;
-            }
-            100% {
-                left: 0;
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
+            border-left: 3px solid #ff80ab;
+            padding-left: 12px;
+            animation: fadeIn 2s ease 2s forwards;
         }
         
         .heart {
@@ -77,6 +50,13 @@
             color: #ff4081;
             font-size: 20px;
             animation: float 5s infinite ease-in;
+            opacity: 0.8;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
         
         @keyframes float {
@@ -98,57 +78,60 @@
 
 <body>
     <h1>💌 Gửi em iu quái 💕</h1>
+
+    <!-- 🖼 Ảnh -->
     <img src="SU.jpg" alt="Em">
 
-    <div class="text-container" id="textContainer"></div>
+    <!-- 💬 Khung hiện chữ -->
+    <div id="message"></div>
 
+    <!-- 🎵 Nhạc nền -->
     <audio autoplay loop>
-    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/02/audio_55c7df2b1a.mp3" type="audio/mpeg">
   </audio>
 
     <script>
-        const message = [
-            "Gửi em iu quái 💕 Hôm nay là 20/10 – một ngày đặc biệt dành cho những người con gái và phụ nữ tuyệt vời.",
-            "Trong lòng anh íi, em luôn xứng đáng với tất cả những lời yêu thương đẹp đẽ nhất.",
-            "Dù địa lý khiến mình không thể gặp nhau, nhưng anh chắc chắn rằng lòng anh vẫn mãi có em.",
-            "Anh luôn mong đợi ngày được gặp lại, bởi khi có em bên cạnh, cuộc sống anh chẳng còn tẻ nhạt như trước.",
-            "Anh nhớ những đêm hai đứa cùng nói chuyện qua màn hình điện thoại, nghe tiếng cười của em mà thấy lòng nhẹ nhõm.",
-            "Chỉ cần một dòng tin nhắn “anh ik cẩn thận nhaa” thôi cũng đủ làm ngày anh rạng rỡ hơn 🌸",
-            "Em à, địa lý chỉ là thử thách nhỏ để anh học cách trân trọng em nhiều hơn.",
-            "Em chính là người khiến anh muốn cố gắng mỗi ngày.",
-            "Anh biết em hay mệt, hay buồn, và dễ khóc nữa — nhưng trước mặt anh, em không cần che giấu điều đó đâu.",
-            "Anh luôn ở đây để lắng nghe, để bảo vệ, để chuyện buồn không còn ghé đến nữa 💗",
-            "Cuối cùng, chúc em một ngày 20/10 thật vui và hạnh phúc 💐",
-            "Thương em nhiều 💞 — Siu nịnh của em —"
-        ];
-
-        const container = document.getElementById("textContainer");
-
-        // Tạo hiệu ứng tim bay
+        // 💖 Tim bay
         function createHeart() {
             const heart = document.createElement("div");
             heart.classList.add("heart");
             heart.textContent = "💖";
             heart.style.left = Math.random() * window.innerWidth + "px";
             heart.style.top = window.innerHeight + "px";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
             document.body.appendChild(heart);
             setTimeout(() => heart.remove(), 5000);
         }
         setInterval(createHeart, 500);
 
-        // Tạo hiệu ứng chữ chạy từng dòng
-        let delay = 0;
-        message.forEach((line, index) => {
-            const p = document.createElement("div");
-            p.classList.add("text-line");
-            p.textContent = line;
-            p.style.top = `${index * 35}px`;
-            p.style.animationDelay = `${delay}s`;
-            delay += 3; // mỗi dòng xuất hiện cách nhau 3s
-            container.appendChild(p);
-        });
+        // 💌 Nội dung thư
+        const text = `Gửi em iu quái 💕 Hôm nay là 20/10 – một ngày đặc biệt dành cho những người con gái và phụ nữ tuyệt vời. 
+    Trong lòng anh íi, em luôn xứng đáng với tất cả những lời yêu thương đẹp đẽ nhất. 
+    Dù địa lý khiến mình không thể gặp nhau, nhưng anh chắc chắn rằng lòng anh vẫn mãi có em. 
+    Anh luôn mong đợi ngày được gặp lại, bởi khi có em bên cạnh, cuộc sống anh chẳng còn tẻ nhạt như trước. 
+    Anh nhớ những đêm hai đứa cùng nói chuyện qua màn hình điện thoại, nghe tiếng cười của em mà thấy lòng nhẹ nhõm. 
+    Chỉ cần một dòng tin nhắn “anh ik cẩn thận nhaa” thôi cũng đủ làm ngày anh rạng rỡ hơn 🌸 
+    Em à, địa lý chỉ là thử thách nhỏ để anh học cách trân trọng em nhiều hơn. 
+    Em chính là người khiến anh muốn cố gắng mỗi ngày. 
+    Anh biết em hay mệt, hay buồn, và dễ khóc nữa — nhưng trước mặt anh, em không cần che giấu điều đó đâu. 
+    Anh luôn ở đây để lắng nghe, để bảo vệ, để chuyện buồn không còn ghé đến nữa 💗 
+    Cuối cùng, chúc em một ngày 20/10 thật vui và hạnh phúc. 
+    Dù anh không ở bên, nhưng anh muốn em biết rằng — ở nơi này, có một người luôn nghĩ về em, thương em và chờ ngày được cùng em đi qua những ngày bình yên. 
+    Thương em nhiều 💞 — Siu nịnh của em —`;
+
+        const msgEl = document.getElementById("message");
+        let i = 0;
+
+        // ✨ Hiệu ứng gõ từng chữ
+        function typeLetter() {
+            if (i < text.length) {
+                msgEl.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeLetter, 50); // tốc độ gõ
+            }
+        }
+        typeLetter();
     </script>
 </body>
-
 
 </html>

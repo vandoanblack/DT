@@ -127,6 +127,35 @@ img {
     box-shadow: 0 0 10px #ffb6c1;
     transform: scale(1);
 }
+
+/* --- FOOTER --- */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px #ffb6c1;
+    animation: glowFooter 3s ease-in-out infinite;
+}
+@keyframes glowFooter {
+    0%,100% { text-shadow: 0 0 10px #ff9ec4; }
+    50% { text-shadow: 0 0 30px #fff; }
+}
+footer span {
+    animation: heartbeat 2s infinite;
+    display: inline-block;
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); color: #ffb6c1; }
+    50% { transform: scale(1.3); color: #ff4081; }
+}
 </style>
 </head>
 
@@ -144,6 +173,11 @@ img {
     <audio id="bgMusic" autoplay loop>
         <source src="TTMN.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- 🌸 FOOTER -->
+    <footer>
+        <p>Made with <span>💗</span> by Siu nịnh — Dành riêng cho em iu 💕</p>
+    </footer>
 
     <script>
     // 💖 Tim bay
@@ -175,7 +209,7 @@ Chỉ cần một dòng tin nhắn “anh ik cẩn thận nhaa” thôi cũng đ
 Em à, địa lý chỉ là thử thách nhỏ để anh học cách trân trọng em nhiều hơn.  
 Em chính là người khiến anh muốn cố gắng mỗi ngày.  
 
-Anh biết em hay mệt, hay buồn, và dễ khóc nữa —  
+Anh biết em hay mệt, hay buồn, và dễ khóc nữa   
 nhưng trước mặt anh, em không cần che giấu điều đó đâu.  
 
 Anh luôn ở đây để lắng nghe, để bảo vệ,  
@@ -206,20 +240,16 @@ Siu nịnh của em`;
         typeLetter();
     });
 
-    // 🎵 Nhạc tự phát khi vào trang, và có thể bật/tắt
+    // 🎵 Nhạc tự phát khi vào trang
     const musicBtn = document.getElementById("musicBtn");
     const music = document.getElementById("bgMusic");
 
-    // Tự phát nhạc sau khi người dùng tương tác (tránh bị chặn)
     window.addEventListener("click", () => {
-        if (music.paused) {
-            music.play();
-        }
+        if (music.paused) music.play();
     }, { once: true });
 
-    music.play().catch(() => {}); // cố gắng tự phát
+    music.play().catch(() => {});
 
-    // Bật/tắt nhạc
     musicBtn.addEventListener("click", () => {
         if (music.paused) {
             music.play();

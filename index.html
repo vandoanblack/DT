@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lá Thư Gửi Bạn 💖</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffc1e3, #ff9acb);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .letter-container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(255, 150, 200, 0.6);
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .music {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letter-container">
+        <h1>💌 Gửi đến bạn một lời nhắn nhỏ 💌</h1>
+        <p>
+            Có những điều không thể nói bằng lời, nên mình gửi nó vào đây. Cảm ơn vì bạn đã luôn là một phần đẹp trong câu chuyện này 🌸 Mong những điều tốt đẹp nhất sẽ luôn ở bên bạn, hôm nay và mãi về sau 💖
+        </p>
+    </div>
+
+    <audio class="music" autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bf6b4f40f6.mp3" type="audio/mpeg">
+  </audio>
+</body>
+
+</html>

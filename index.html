@@ -158,10 +158,10 @@ footer span {
 }
 </style>
 </head>
-
+  <img src="SU.jpg" alt="Em iu">
 <body>
     <h1>💌 Gửi em iu quái 💕</h1>
-    <img src="SU.jpg" alt="Em iu">
+  
 
     <button id="openButton">💖 Mở thư 💌</button>
     <div id="message"></div>
@@ -176,10 +176,10 @@ footer span {
 
     <!-- 🌸 FOOTER -->
     <footer>
-        <p>Made with <span>💗</span> by Siu nịnh — Dành riêng cho em iu 💕</p>
+        <p>Made with <span>💗</span> by Anh — Dành riêng cho em 💕</p>
     </footer>
 
-   <script>
+  <script>
     // 💖 Tim bay
     function createHeart() {
         const heart = document.createElement("div");
@@ -227,9 +227,23 @@ Siu nịnh của em`;
     const music = document.getElementById("bgMusic");
     let i = 0;
 
+    // 🎀 Gõ từng ký tự và tự xuống dòng khi gặp sticker
     function typeLetter() {
         if (i < text.length) {
-            msgEl.innerHTML += text.charAt(i);
+            let char = text.charAt(i);
+
+            // Nếu là emoji (💗 🌸 💕 💞 ...) thì thêm <br> sau nó
+            if (["💗","🌸","💕","💞"].includes(char)) {
+                msgEl.innerHTML += char + "<br><br>";
+            } 
+            // Nếu là ký tự xuống dòng trong văn bản
+            else if (char === "\n") {
+                msgEl.innerHTML += "<br>";
+            } 
+            else {
+                msgEl.innerHTML += char;
+            }
+
             i++;
             setTimeout(typeLetter, 45);
         }
@@ -244,6 +258,8 @@ Siu nịnh của em`;
     });
 </script>
 
+
 </body>
 </html>
-     CHO NHẠC BẬT TRƯỚC KHÔNG CẦN ĐỢI BẤM VÀO NHẠC MỚI LÊN 
+    
+

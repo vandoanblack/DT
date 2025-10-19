@@ -4,70 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lá Thư Gửi Bạn 💖</title>
+    <title>💖 Gửi em iu quái 💕</title>
     <style>
         body {
-            margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #ffc1e3, #ff9acb);
-            color: #fff;
+            background: linear-gradient(135deg, #ffe6f2, #ffd6ec);
+            font-family: "Segoe UI", cursive;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .letter-container {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 80%;
-            max-width: 500px;
-            box-shadow: 0 4px 20px rgba(255, 150, 200, 0.6);
+            align-items: center;
+            min-height: 100vh;
             text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
+            color: #d63384;
+            padding: 20px;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in;
         }
         
         h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
+            font-size: 2.2em;
+            color: #ff1493;
+            margin-bottom: 25px;
+            animation: fadeIn 2s ease-in;
         }
         
         p {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 1.15em;
+            max-width: 900px;
+            line-height: 1.9;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 25px 30px;
+            border-radius: 25px;
+            box-shadow: 0 4px 20px rgba(255, 192, 203, 0.4);
+            animation: fadeInUp 3s ease-in-out;
+        }
+        
+        audio {
+            margin-top: 25px;
+            border-radius: 20px;
         }
         
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        .music {
-            display: none;
-        }
     </style>
 </head>
 
 <body>
-    <div class="letter-container">
-        <h1>💌 Gửi đến bạn một lời nhắn nhỏ 💌</h1>
-        <p>
-            Có những điều không thể nói bằng lời, nên mình gửi nó vào đây. Cảm ơn vì bạn đã luôn là một phần đẹp trong câu chuyện này 🌸 Mong những điều tốt đẹp nhất sẽ luôn ở bên bạn, hôm nay và mãi về sau 💖
-        </p>
-    </div>
+    <h1>💌 Gửi em iu quái 💕</h1>
+    <p>
+        Hôm nay là 20/10 – một ngày đặc biệt dành cho những người con gái và phụ nữ tuyệt vời. Trong lòng anh íi, em luôn xứng đáng với tất cả những lời yêu thương đẹp đẽ nhất. Dù địa lý khiến mình không thể gặp nhau, nhưng anh chắc chắn rằng lòng anh vẫn mãi
+        có em. Anh luôn mong đợi ngày được gặp lại, bởi khi có em bên cạnh, cuộc sống anh chẳng còn tẻ nhạt như trước. Anh nhớ những đêm hai đứa cùng nói chuyện qua màn hình điện thoại, nghe tiếng cười của em mà thấy lòng nhẹ nhõm. Chỉ cần một dòng tin
+        nhắn “anh ik cẩn thận nhaa” thôi cũng đủ làm ngày anh rạng rỡ hơn 🌸
+        <br><br> Em à, địa lý chỉ là thử thách nhỏ để anh học cách trân trọng em nhiều hơn. Em chính là người khiến anh muốn cố gắng mỗi ngày. Anh biết em hay mệt, hay buồn, và dễ khóc nữa — nhưng trước mặt anh, em không cần che giấu điều đó đâu. Anh
+        luôn ở đây để lắng nghe, để bảo vệ, để chuyện buồn không còn ghé đến nữa 💗
+        <br><br> Em hãy cố gắng học thật giỏi để đạt được điều em mong muốn nhé. Nếu mệt, đừng giữ trong lòng — nói với anh, vì anh lúc nào cũng sẵn sàng tiếp thêm năng lượng tích cực cho em 💪
+        <br><br> Cuối cùng, chúc em một ngày 20/10 thật vui và hạnh phúc. Dù anh không ở bên, nhưng anh muốn em biết rằng — ở nơi này, có một người luôn nghĩ về em, thương em và chờ ngày được cùng em đi qua những ngày bình yên.
+        <br><br> Thương em nhiều 💞
+        <br>— Siu nịnh của em —
+    </p>
 
-    <audio class="music" autoplay loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bf6b4f40f6.mp3" type="audio/mpeg">
-  </audio>
+    <audio controls autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ phát nhạc.
+    </audio>
 </body>
 
 </html>

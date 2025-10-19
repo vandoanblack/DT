@@ -1,185 +1,4 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>💌 Gửi em iu quái 💕</title>
-<style>
-/* --- NỀN MÀU + ẢNH NỀN MỜ --- */
-body {
-    margin: 0;
-    padding: 40px;
-    text-align: center;
-    font-family: "Segoe UI", sans-serif;
-    color: #fff;
-    overflow: hidden;
-    background: radial-gradient(circle at top left, #ffb6c1, #ff69b4, #ffc0cb, #ff9ec4);
-    background-size: 400% 400%;
-    animation: bgShift 15s ease infinite;
-    position: relative;
-}
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("dd.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.25;
-    z-index: -1;
-}
-@keyframes bgShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 25px;
-    text-shadow: 0 0 15px #ff80ab, 0 0 40px #ff4081, 0 0 60px #ffb6c1;
-    animation: pulse 3s infinite;
-}
-@keyframes pulse {
-    0% { text-shadow: 0 0 10px #ff80ab; }
-    50% { text-shadow: 0 0 35px #ff4081; }
-    100% { text-shadow: 0 0 10px #ff80ab; }
-}
-img {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    box-shadow: 0 0 25px #ff8acb, 0 0 60px #ffb6c1;
-    margin-bottom: 30px;
-    animation: glow 3s ease-in-out infinite;
-}
-@keyframes glow {
-    0%,100% { transform: scale(1); box-shadow: 0 0 25px #ffb6c1; }
-    50% { transform: scale(1.05); box-shadow: 0 0 60px #ff69b4; }
-}
-#message {
-    display: none;
-    font-size: 1.2em;
-    max-width: 85%;
-    line-height: 1.8;
-    text-align: justify;
-    color: #fff;
-    text-shadow: 0 0 8px rgba(255, 192, 203, 0.8);
-    border-left: 3px solid #fff;
-    padding-left: 15px;
-    margin-top: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    backdrop-filter: blur(6px);
-    margin-left: auto;
-    margin-right: auto;
-}
-.heart {
-    position: fixed;
-    bottom: 0;
-    font-size: 20px;
-    animation: float 6s linear infinite;
-    opacity: 0.9;
-    z-index: 999;
-}
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
-}
-/* --- NÚT BẤM HIỆN THƯ --- */
-#openButton {
-    background: linear-gradient(45deg, #ff80ab, #ff4081);
-    color: white;
-    border: none;
-    padding: 12px 28px;
-    font-size: 1.1em;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #ff9ec4;
-    transition: all 0.3s ease;
-}
-#openButton:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #ffb6c1;
-}
-/* --- NÚT NHẠC --- */
-#musicBtn {
-    position: fixed;
-    top: 20px;
-    right: 25px;
-    background: #ff69b4;
-    border: 2px solid white;
-    border-radius: 50%;
-    padding: 10px 14px;
-    font-size: 1.3em;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 20px #fff;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-#musicBtn.playing {
-    background: rgba(255, 192, 203, 0.4);
-    box-shadow: 0 0 10px #ffb6c1;
-    transform: scale(1);
-}
-
-/* --- FOOTER --- */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    font-size: 1em;
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px #ffb6c1;
-    animation: glowFooter 3s ease-in-out infinite;
-}
-@keyframes glowFooter {
-    0%,100% { text-shadow: 0 0 10px #ff9ec4; }
-    50% { text-shadow: 0 0 30px #fff; }
-}
-footer span {
-    animation: heartbeat 2s infinite;
-    display: inline-block;
-}
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); color: #ffb6c1; }
-    50% { transform: scale(1.3); color: #ff4081; }
-}
-</style>
-</head>
-
-<body>
-    <h1>💌 Gửi em iu quái 💕</h1>
-    <img src="SU.jpg" alt="Em iu">
-
-    <button id="openButton">💖 Mở thư 💌</button>
-    <div id="message"></div>
-
-    <!-- Nút bật/tắt nhạc -->
-    <button id="musicBtn" class="playing">🎵</button>
-
-    <!-- Nhạc nền -->
-    <audio id="bgMusic" autoplay loop>
-        <source src="TTMN.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- 🌸 FOOTER -->
-    <footer>
-        <p>Made with <span>💗</span> by Siu nịnh — Dành riêng cho em iu 💕</p>
-    </footer>
-
-    <script>
+<script>
     // 💖 Tim bay
     function createHeart() {
         const heart = document.createElement("div");
@@ -240,16 +59,22 @@ Siu nịnh của em`;
         typeLetter();
     });
 
-    // 🎵 Nhạc tự phát khi vào trang
+    // 🎵 Tự động bật nhạc (chỉ cần 1 chạm)
     const musicBtn = document.getElementById("musicBtn");
     const music = document.getElementById("bgMusic");
 
-    window.addEventListener("click", () => {
-        if (music.paused) music.play();
-    }, { once: true });
+    function playMusic() {
+        music.play().then(() => {
+            musicBtn.classList.add("playing");
+        }).catch(() => {});
+        window.removeEventListener("mousemove", playMusic);
+        window.removeEventListener("touchstart", playMusic);
+    }
 
-    music.play().catch(() => {});
+    window.addEventListener("mousemove", playMusic);
+    window.addEventListener("touchstart", playMusic);
 
+    // Nút bật/tắt
     musicBtn.addEventListener("click", () => {
         if (music.paused) {
             music.play();
@@ -259,6 +84,4 @@ Siu nịnh của em`;
             musicBtn.classList.remove("playing");
         }
     });
-    </script>
-</body>
-</html>
+</script>

@@ -18,6 +18,30 @@ body {
     animation: bgShift 15s ease infinite;
     position: relative;
 }
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffe6f2;
+    color: #d63384;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    overflow-y: auto; /* ✅ Cho phép cuộn xuống */
+}
+
+.container {
+    min-height: 100vh; /* ✅ Chiều cao tối thiểu */
+    padding: 40px 20px;
+}
+
+#message {
+    white-space: pre-wrap; /* ✅ Giữ format xuống dòng */
+    display: inline-block;
+    max-width: 90%;
+    text-align: left;
+    line-height: 1.6;
+    margin-top: 30px;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -262,4 +286,5 @@ Siu nịnh của em`;
 </body>
 </html>
     
+
 

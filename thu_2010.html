@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gửi em yêu 💌</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #ffd6eb, #fff0f7);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            color: #ff4b8b;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background-color: #ff6fa1;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #ff4b8b;
+        }
+        
+        .letter {
+            display: none;
+            text-align: left;
+            margin-top: 20px;
+            color: #444;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Hiệu ứng tim bay */
+        
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: #ff6fa1;
+            font-size: 18px;
+            animation: rise 6s linear infinite;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.6);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="bg-music" loop autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/02/audio_6fa9cf6d64.mp3?filename=romantic-piano-130448.mp3" type="audio/mpeg">
+  </audio>
+
+    <div class="container">
+        <h1>💌 Gửi em yêu 💗</h1>
+        <p>Hôm nay là 20/10 – một ngày đặc biệt dành cho em 💐</p>
+        <button onclick="showLetter()">Xem thư của anh 💞</button>
+
+        <div class="letter" id="letter">
+            Gửi em iu quái 💕 Hôm nay là 20/10 – một ngày đặc biệt dành cho những người con gái và phụ nữ tuyệt vời. Trong lòng anh íi, em luôn xứng đáng với tất cả những lời yêu thương đẹp đẽ nhất. Dù địa lý khiến mình không thể gặp nhau, nhưng anh chắc chắn rằng
+            lòng anh vẫn mãi có em. Anh luôn mong đợi ngày được gặp lại, bởi khi có em bên cạnh, cuộc sống anh chẳng còn tẻ nhạt như trước. Anh nhớ những đêm hai đứa cùng nói chuyện qua màn hình điện thoại, nghe tiếng cười của em mà thấy lòng nhẹ nhõm.
+            Chỉ cần một dòng tin nhắn “anh ik cẩn thận nhaa” thôi cũng đủ làm ngày anh rạng rỡ hơn 🌸 Em à, địa lý chỉ là thử thách nhỏ để anh học cách trân trọng em nhiều hơn. Em chính là người khiến anh muốn cố gắng mỗi ngày. Anh biết em hay mệt, hay
+            buồn, và dễ khóc nữa — nhưng trước mặt anh, em không cần che giấu điều đó đâu. Anh luôn ở đây để lắng nghe, để bảo vệ, để chuyện buồn không còn ghé đến nữa 💗 Em hãy cố gắng học thật giỏi để đạt được điều em mong muốn nhé. Nếu mệt, đừng giữ
+            trong lòng — nói với anh, vì anh lúc nào cũng sẵn sàng tiếp thêm năng lượng tích cực cho em 💪 Cuối cùng, chúc em một ngày 20/10 thật vui và hạnh phúc. Dù anh không ở bên, nhưng anh muốn em biết rằng — ở nơi này, có một người luôn nghĩ về
+            em, thương em và chờ ngày được cùng em đi qua những ngày bình yên. Thương em nhiều 💞 — Siu nịnh của em —
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            document.getElementById('letter').style.display = 'block';
+        }
+
+        // Hiệu ứng tim bay
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+
+</html>
